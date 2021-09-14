@@ -1,0 +1,30 @@
+.location-item{
+  width: 340px;
+  height: 340px;
+  background: linear-gradient(180deg, rgba(255, 96, 96, 1) 0%, rgba(128, 48, 48, 1) 100%);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  color:#FFF;
+  font-size: 18px;
+  margin:25px;
+}
+
+.location-item-cover{
+  align-self: center;
+  height: 255px;
+  width: 335px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin:2%;
+  margin-top: 1%;
+
+}
+.location-item-title{
+  height: 50px;
+  max-width: 70%;
+  margin-top: 0;
+  margin: 10px;
+}
