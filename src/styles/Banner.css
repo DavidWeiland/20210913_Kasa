@@ -1,20 +1,38 @@
 .banner{
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  max-width: 1240px;
+  margin:auto;
+  height: 68px;
+  margin-top: 40px;
 }
 
 .banner-nav{
+  width: 309px;
+  height: 34px;
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
   list-style-type: none;
-  position:absolute;
-  right:10px;
-  top:0;
 }
 
 .banner-nav-elem{
+  display: flex;
+  justify-content: flex-end;
+  height: 34px;
   color:#FF6060;
+  font-size: 24px;
   font-weight: 500;
-  padding:10px;
-  margin: 10px;
+  margin-left: 50px;
+}
+
+.lien-actif{
+  text-decoration-line: underline;
+}
+
+.banner-logo{
+  width: 210px;
+  height: 68px;
 }
