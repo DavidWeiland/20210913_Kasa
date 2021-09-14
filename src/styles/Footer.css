@@ -1,0 +1,25 @@
+.footer{
+  background-color: #000000;
+  color:#FFF;
+  font-size: 24px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo{
+color: black;
+width: 122px;
+height: 40px;
+margin-top: 66px;
+}
+
+.footer-text{
+  height: 46px;
+  display: flex;
+  align-items: flex-end;
+  margin: 29px;
+}
