@@ -9,7 +9,7 @@ function Location() {
 
   return (
     <div className='body'>
-      {locationsList.filter((location) => (location.id === idLocation)).map(({ index, id, title, pictures, description, host, rating, location, equipements, tags }) => (
+      {locationsList.filter((location) => (location.id === idLocation)).map(({ index, id, title, pictures, description, host, rating, location, equipments, tags }) => (
         <FicheLocation
           key={`${id}-${index}`}
                 id={id}
@@ -19,7 +19,7 @@ function Location() {
                 host={host}
                 rating={rating}
                 location={location}
-                equipements={equipements}
+                equipments={equipments}
                 tags={tags}
         />
       ))}

@@ -7,8 +7,11 @@ import React from 'react'
 
 class FicheLocation extends React.Component {
   render() {
-  
-    return (
+
+    //console.log({this.props.equipments})
+    //const equipementsList = {equipements.map((equipement) => <span>{ equipement }</span>)}
+    
+  return(
       <div>
           
           <div className="fiche-location-header">
@@ -44,7 +47,7 @@ class FicheLocation extends React.Component {
               <AboutCard
                   key={`equipements-${this.props.id}`}
                   title="Equipements"
-                  describe={this.props.equipements}
+                  describe2={this.props.equipments}
                   />
           </div>
       </div>
