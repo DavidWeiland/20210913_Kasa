@@ -1,9 +1,10 @@
-.fiche-location-carousel{background-color: aqua;
+.fiche-location-carousel{
+  background-color: #F6F6F6;
   height: 415px;
   width: 1240px;
   border-radius: 25px;
 }
-.fiche-location-header{background-color: azure;
+.fiche-location-header{
   height: auto;
   width: 1240px;
   display: flex;

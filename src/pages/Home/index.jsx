@@ -2,12 +2,13 @@ import '../../styles/App.css'
 import background from '../../assets/images/section_1_BG.jpg'
 import { locationsList } from '../../data/locationsList'
 import Card from '../../components/Card'
+import React from 'react'
 
-
-function App() {
-  document.title = `Kasa`
-
-  return (
+class App extends React.Component {
+  render(){
+    document.title = `Kasa`
+  
+    return (
       <div className='body'>
         <section className='section-1'>
           <img src={background} alt='background' className='section-1-BG' />
@@ -15,16 +16,17 @@ function App() {
         </section>
         <section className='gallery'>
         {locationsList.map(({ index, id, title, cover}) => (
-              <Card
-                key={`${id}-${index}`}
-                id={id}
-                cover={cover}
-                title={title}
-              />
-            ))}
+          <Card
+          key={`${id}-${index}`}
+          id={id}
+          cover={cover}
+          title={title}
+          />
+          ))}
         </section>
       </div>
   )
+}
 }
 
 export default App

@@ -1,22 +1,26 @@
 import '../../styles/Card.css'
 import DefaultPicture from '../../assets/images/section_1_BG.jpg'
 import PropTypes from 'prop-types'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import React from 'react'
 
-function Card({id, title, cover}) {
-    return (
-        <Link
-            to={`/location/${id}`}
+class Card extends React.Component {
+    render() {
+        
+        return (
+            <Link
+            to={`/location/${this.props.id}`}
             className="location-item"
-        >
+            >
             <img
                 className="location-item-cover"
-                src={cover}
-                alt={`${title} cover`}
-            />
-            <span className="location-item-title">{title}</span>
+                src={this.props.cover}
+                alt={`${this.props.title} cover`}
+                />
+            <span className="location-item-title">{this.props.title}</span>
         </Link>
     )
+}
 }
 
 Card.propTypes = {
