@@ -6,7 +6,6 @@ import React from 'react'
 
 class App extends React.Component {
   render(){
-    document.title = `Kasa`
   
     return (
       <div className='body'>
