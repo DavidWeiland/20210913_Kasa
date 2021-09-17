@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home'
 import Error from './pages/Error'
 import About from './pages/About';
+import Location from './pages/Location';
 
 ReactDOM.render(
     <React.StrictMode>
@@ -19,6 +20,10 @@ ReactDOM.render(
                 </Route>
                 <Route path="/about">
                     <About />
+                    <Footer />
+                </Route>
+                <Route path="/location/:idLocation">
+                    <Location />
                     <Footer />
                 </Route>
                 <Route>

@@ -3,21 +3,7 @@ import DefaultPicture from '../../assets/images/section_1_BG.jpg'
 import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom'
 
-function Card({
-  id,
-  title,
-  cover,
-  pictures,
-  description,
-  host,
-  rating,
-  location,
-  equipements,
-  tags,
-}) {
-
-  console.log({ id }, { title }, { pictures }, { description }, { host }, { rating }, { location }, { equipements }, { tags })
-  
+function Card({id, title, cover}) {
     return (
         <Link
             to={`/location/${id}`}

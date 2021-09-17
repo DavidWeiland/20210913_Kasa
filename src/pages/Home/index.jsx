@@ -14,19 +14,12 @@ function App() {
           <h1 className='section-1-title'>Chez vous, partout et ailleurs</h1>
         </section>
         <section className='gallery'>
-        {locationsList.map(({ index, id, title, cover, pictures, description, host, rating, location, equipements, tags }) => (
+        {locationsList.map(({ index, id, title, cover}) => (
               <Card
                 key={`${id}-${index}`}
                 id={id}
                 cover={cover}
                 title={title}
-                pictures={pictures}
-                description={description}
-                host={host}
-                rating={rating}
-                location={location}
-                equipements={equipements}
-                tags={tags}
               />
             ))}
         </section>
