@@ -18,9 +18,9 @@ class About extends React.Component {
                 <div className="section-1-title"></div>
             </section>
             <section className="gallery-2">
-                {aboutText.map(({ id, title, describe }) => (
+                {aboutText.map(({ index, title, describe }) => (
                     <AboutCard
-                    key={id}
+                    key={`${title}-${index}`}
                     title={title}
                     describe={describe}
                     />
