@@ -6,53 +6,54 @@ import AboutCard from '../AboutCard/AboutCard'
 import React from 'react'
 
 class FicheLocation extends React.Component {
-  render() {
-
-    //console.log({this.props.equipments})
-    //const equipementsList = {equipements.map((equipement) => <span>{ equipement }</span>)}
-    
-  return(
-      <div>
-          
-          <div className="fiche-location-header">
-              <h1 className="fiche-location-title">{this.props.title}</h1>
-              <div className="fiche-location-host">
-                  <span className="fiche-location-host-name">
-                      {this.props.host.name}
-                  </span>
-                  <img
-                      src={`${this.props.host.picture}`}
-                      alt={`${this.props.host.picture}`}
-                      className="fiche-location-host-picture"
-                      />
-              </div>
-          </div>
-          <h2 className="fiche-location-subtitle">{this.props.location}</h2>
-          <div>
-              <div className="fiche-location-tags">
-                  {this.props.tags.map((tag, index) => (
-                    <span className="fiche-location-tag" key={`tag-${index}`}>
-                          {tag}
-                      </span>
-                  ))}
-              </div>
-              <span className="fiche-location-rating">{this.props.rating}</span>
-          </div>
-          <div className="fiche-location-about">
-              <AboutCard
-                  key={`description-${this.props.id}`}
-                  title="Description"
-                  describe={this.props.description}
-                  />
-              <AboutCard
-                  key={`equipements-${this.props.id}`}
-                  title="Equipements"
-                  describe2={this.props.equipments}
-                  />
-          </div>
-      </div>
-  )
-}
+  
+    render() {    
+        return (
+            <div>
+                <div className="fiche-location-header">
+                    <h1 className="fiche-location-title">{this.props.title}</h1>
+                    <div className="fiche-location-host">
+                        <div className="fiche-location-host-name">
+                            <span>
+                                {this.props.host.name.split(" ")[0]}
+                            </span>
+                            <span>
+                                {this.props.host.name.split(" ")[1]}
+                            </span>
+                        </div>
+                        <img
+                            src={`${this.props.host.picture}`}
+                            alt={`${this.props.host.picture}`}
+                            className="fiche-location-host-picture"
+                        />
+                    </div>
+                </div>
+                <h2 className="fiche-location-subtitle">{this.props.location}</h2>
+                <div>
+                    <div className="fiche-location-tags">
+                        {this.props.tags.map((tag, index) => (
+                            <span className="fiche-location-tag" key={`tag-${index}`}>
+                                {tag}
+                            </span>
+                        ))}
+                    </div>
+                    <span className="fiche-location-rating">{this.props.rating}</span>
+                </div>
+                <div className="fiche-location-about">
+                    <AboutCard
+                        key={`description-${this.props.id}`}
+                        title="Description"
+                        describe={this.props.description}
+                    />
+                    <AboutCard
+                        key={`equipements-${this.props.id}`}
+                        title="Equipements"
+                        describe2={this.props.equipments}
+                    />
+                </div>
+            </div>
+        )
+    }
 }
 
 FicheLocation.propTypes = {
