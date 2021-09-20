@@ -6,21 +6,13 @@ import React from 'react'
 
 class Card extends React.Component {
     render() {
-        
         return (
-            <Link
-            to={`/location/${this.props.id}`}
-            className="location-item"
-            >
-            <img
-                className="location-item-cover"
-                src={this.props.cover}
-                alt={`${this.props.title} cover`}
-                />
-            <span className="location-item-title">{this.props.title}</span>
-        </Link>
-    )
-}
+            <Link to={`/location/${this.props.id}`} className="location-item">
+                <img className="location-item-cover" src={this.props.cover} alt={`${this.props.title} cover`} />
+                <span className="location-item-title">{this.props.title}</span>
+            </Link>
+        )
+    }
 }
 
 Card.propTypes = {

@@ -7,7 +7,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home'
 import Error from './pages/Error'
 import About from './pages/About';
-import Location from './pages/Location';
+import LocationPage from './pages/LocationPage';
 
 ReactDOM.render(
     <React.StrictMode>
@@ -23,7 +23,7 @@ ReactDOM.render(
                     <Footer />
                 </Route>
                 <Route path="/location/:idLocation">
-                    <Location />
+                    <LocationPage />
                     <Footer />
                 </Route>
                 <Route>

@@ -1,7 +1,7 @@
 export const aboutText = [
   {
     "title": "Fiabilité",
-    "describe":"Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logement, et toutes les informations sont régulièrement vérifiées par nos équipes.",
+    "describe":"Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logement, et toutes les informations sont régulièrement vérifiées par nos équipes."
   },
   {
     "title": "Respect",
