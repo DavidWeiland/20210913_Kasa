@@ -8,6 +8,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  margin-top: 40px;
 }
 
 .footer-logo{
@@ -22,4 +23,19 @@ margin-top: 66px;
   display: flex;
   align-items: flex-end;
   margin: 29px;
+}
+@media screen and (max-width:376px) {
+  .footer{
+    font-size: 12px;
+    margin-top: 20px;
+  }
+
+  .footer-logo{
+  margin-top: 40px;
+  }
+
+  .footer-text{
+    margin: 0;
+    margin-bottom: 40px;
+  }
 }

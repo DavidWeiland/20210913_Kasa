@@ -2,10 +2,10 @@
   width: 80%;
   height: auto;
   background: #f6f6f6;
-  border-radius: 10px;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
   color:#FFF;
   font-size: 18px;
@@ -14,9 +14,9 @@
 
 .about-item-title-container{
   width: 100%;
-  height: 30px;
+  height: 47px;
   background: rgba(255, 96, 96, 1);
-  border-radius: 10px;
+  border-radius: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,7 +24,7 @@
 
 .about-item-title{
   font-size:24px;
-  margin-left:20px;
+  margin-left:15px;
 }
 
 .about-item-icon{
@@ -39,14 +39,42 @@
   width: 100%;
   height: auto;
   background: #F6F6F6;
-  border-radius: 10px;
+  border-radius: 5px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .about-item-describe{
+  display: flex;
+  flex-direction: column;
   color:rgba(255, 96, 96, 1);
   font-size:24px;
-  margin: 20px;
-  margin-top:30px;
+  margin: 15px;
+  margin-top:20px;
+}
+@media screen and (max-width:376px) {
+    .about-item{
+      width: 100%;
+      margin:3%;
+    }
+
+    .about-item-title-container{
+      height: 30px;
+    }
+
+    .about-item-title{
+      font-size:13px;
+      margin-left:10px;
+    }
+
+    .about-item-icon{
+      height: 13px;
+    }
+
+    .about-item-describe{
+      font-size:12px;
+      margin: 10px;
+      margin-top:15px;
+    }
 }

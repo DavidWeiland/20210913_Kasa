@@ -3,6 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   max-width: 1240px;
   margin:auto;
   height: 68px;
@@ -14,7 +15,7 @@
 }
 
 .banner-nav{
-  width: 309px;
+  width: auto;
   height: 34px;
   display: flex;
   flex-direction: row;
@@ -37,4 +38,21 @@
 .banner-nav-elem:hover{
   cursor: pointer;
   text-decoration-line: underline;
+}
+
+@media screen and (max-width:376px) {
+    .banner{
+      height: 50px;
+      margin: 0 auto;
+      width: 92%;
+    }
+
+    .banner-logo{
+      height: 50px;
+    }
+
+    .banner-nav-elem{
+      font-size: 12px;
+      margin-left: 15px;
+    }
 }

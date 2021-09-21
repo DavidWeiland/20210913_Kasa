@@ -34,9 +34,11 @@ class App extends React.Component {
               alt="background"
               className="section-1-BG"
             />
-            <h1 className="section-1-title">
-              Chez vous, partout et ailleurs
-            </h1>
+            <div className="section-1-title-container">
+                <h1 className="section-1-title">
+                  Chez vous, partout et ailleurs
+                </h1>
+            </div>
           </section>
           <section className="gallery">
             {locations.map(({ index, id, title, cover }) => (

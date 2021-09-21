@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: auto;
+  height: 82vh;
   width: 100%;
   max-width: 1240px;
   margin:auto;
@@ -34,4 +34,22 @@
   font-weight: 500;
   width: 100%;
   color:#FF6060;
+}
+
+@media screen and (max-width:376px){
+    .body-error{
+      width: 90%;
+    }
+
+    .code-error{
+      font-size: 96px;
+    }
+
+    .subtitle{
+      font-size: 18px;
+    }
+
+    .suggest{
+      font-size: 14px;
+    }
 }

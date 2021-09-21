@@ -16,20 +16,18 @@ ReactDOM.render(
             <Switch>
                 <Route exact path="/">
                     <Home />
-                    <Footer />
                 </Route>
                 <Route path="/about">
                     <About />
-                    <Footer />
                 </Route>
                 <Route path="/location/:idLocation">
                     <LocationPage />
-                    <Footer />
                 </Route>
                 <Route>
                     <Error />
                 </Route>
             </Switch>
+            <Footer />
         </Router>
     </React.StrictMode>,
     document.getElementById("root")

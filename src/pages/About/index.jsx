@@ -28,13 +28,13 @@ class About extends React.Component {
         } else {
             return (
                 <div className="body">
-                    <section className="section-1">
+                    <section className="section-2">
                         <img
                             src={background}
                             alt="background"
-                            className="section-1-BG"
+                            className="section-2-BG"
                         />
-                        <div className="section-1-title"></div>
+                        <div className="section-2-title-container"></div>
                     </section>
                     <section className="gallery-2">
                         {aboutText.map(({ index, title, describe }) => (
