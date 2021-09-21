@@ -1,43 +1,55 @@
 import '../../styles/FicheLocation.css'
-import DefaultPicture from '../../assets/images/section_1_BG.jpg'
-import PropTypes from 'prop-types'
-//import { Carousel } from '../Carousel/Carousel'
+import Carousel from '../Carousel/Carousel'
 import AboutCard from '../AboutCard/AboutCard'
 import React from 'react'
+import CareScale from '../CareScale'
 
 class FicheLocation extends React.Component {
   
-    render() {    
+    render() {
         return (
-            <div>
+            <div className="body">
+                <div className="fiche-location-carousel-container">
+                    <div className="fiche-location-carousel">
+                    {this.props.pictures.map((picture, index) => (
+                        <Carousel
+                            key={`${picture}-${index}`}
+                            index={index + 1}
+                            picture={picture}
+                            length={this.props.pictures.length}
+                        />
+                    ))}
+                    </div>
+                </div>
                 <div className="fiche-location-header">
+                <div className="fiche-location-header-left">
                     <h1 className="fiche-location-title">{this.props.title}</h1>
+                    <h2 className="fiche-location-subtitle">
+                    {this.props.location}</h2>
+                    <div className="fiche-location-tag-rating-container">
+                        <div className="fiche-location-tag-container">
+                        {this.props.tags.map((tag, index) => (
+                            <span key={`tag-${index}`}>{tag}</span>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+                <div className="fiche-location-header-right">
                     <div className="fiche-location-host">
                         <div className="fiche-location-host-name">
-                            <span>
-                                {this.props.host.name.split(" ")[0]}
-                            </span>
-                            <span>
-                                {this.props.host.name.split(" ")[1]}
-                            </span>
+                            <span>{this.props.host.name.split(" ")[0]}</span>
+                            <span>{this.props.host.name.split(" ")[1]}</span>
                         </div>
                         <img
                             src={`${this.props.host.picture}`}
                             alt={`${this.props.host.picture}`}
                             className="fiche-location-host-picture"
-                        />
+                            />
+                    </div>
+                    <div className="fiche-location-rating-container">
+                        <CareScale scaleValue={this.props.rating} />
                     </div>
                 </div>
-                <h2 className="fiche-location-subtitle">{this.props.location}</h2>
-                <div>
-                    <div className="fiche-location-tags">
-                        {this.props.tags.map((tag, index) => (
-                            <span className="fiche-location-tag" key={`tag-${index}`}>
-                                {tag}
-                            </span>
-                        ))}
-                    </div>
-                    <span className="fiche-location-rating">{this.props.rating}</span>
                 </div>
                 <div className="fiche-location-about">
                     <AboutCard
@@ -48,22 +60,12 @@ class FicheLocation extends React.Component {
                     <AboutCard
                         key={`equipements-${this.props.id}`}
                         title="Equipements"
-                        describe2={this.props.equipments}
+                        describe={this.props.equipments}
                     />
                 </div>
             </div>
         )
     }
-}
-
-FicheLocation.propTypes = {
-  cover: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-}
-
-FicheLocation.defaultProps = {
-  cover: DefaultPicture,
-  title : '',
 }
 
 export default FicheLocation
