@@ -1,5 +1,4 @@
 import '../../styles/FicheLocation.css'
-import "../../styles/Carousel copy.css"
 import AboutCard from '../AboutCard/AboutCard'
 import React from 'react'
 import CareScale from '../CareScale'
