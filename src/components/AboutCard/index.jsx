@@ -7,7 +7,7 @@ export default class AboutCard extends React.Component {
     constructor(props){
         super(props)
         this.state = { check: true }
-        this.toggle = this.divOpeningToggle.bind(this)
+        this.divOpeningToggle = this.divOpeningToggle.bind(this)
     }
     divOpeningToggle(){
         this.setState(({ check })=>({check:!check}))
