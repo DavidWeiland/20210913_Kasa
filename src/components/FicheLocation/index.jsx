@@ -4,26 +4,12 @@ import React from 'react'
 import ScoreScale from '../ScoreScale'
 import chevron from "../../assets/images/chevron-down.svg"
 
+
 export default class FicheLocation extends React.Component {
     constructor(props) {
-        super(props)
-        this.state = { index: 1 }
-        this.next = this.next.bind(this)
-        this.prev = this.prev.bind(this)
-    }
-
-    next() {
-        (this.state.index === this.props.pictures.length) 
-            ? (this.setState(() => ({ index: 1 })))
-            : (this.setState((state) => ({ index: state.index +1 })))
-    }
-
-    prev() {
-        this.state.index === 1
-            ? this.setState(() => ({ index: this.props.pictures.length }))
-            : this.setState((state) => ({ index: state.index - 1 }))
-    }
-
+        super(props);
+        this.state={}
+  }
     render() {
         const { pictures, title, tags, host, rating, id, description, equipments, location } = this.props
         return (
@@ -53,9 +39,9 @@ export default class FicheLocation extends React.Component {
                             src={chevron}
                             alt="prev-icon"
                         />
+                    ))}
                     </div>
                 </div>
-
                 <div className="fiche-location-header">
                     <div className="fiche-location-header-left">
                         <h1 className="fiche-location-title">
@@ -90,8 +76,8 @@ export default class FicheLocation extends React.Component {
                         </div>
                         <div className="fiche-location-rating-container">
                             <ScoreScale scoreValue={rating} />
-                        </div>
                     </div>
+                </div>
                 </div>
                 <div className="fiche-location-about">
                     <AboutCard

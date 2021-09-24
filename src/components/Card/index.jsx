@@ -5,15 +5,19 @@ import { Link } from 'react-router-dom'
 import React from 'react'
 
 export default class Card extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state={}
-  }
+    constructor(props) {
+        super(props)
+        this.state = {}
+    }
   render() {
-    const { id, cover, title } = this.props
+      const { id, cover, title } = this.props
         return (
             <Link to={`/location/${id}`} className="location-item">
-                <img className="location-item-cover" src={cover} alt={`${title} cover`} />
+                <img
+                    className="location-item-cover"
+                    src={cover}
+                    alt={`${title} cover`}
+                />
                 <span className="location-item-title">{title}</span>
             </Link>
         )

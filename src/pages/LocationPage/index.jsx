@@ -17,7 +17,7 @@ export default class LocationPage extends React.Component {
 
     componentDidMount() {
         this.setState({ isLoading: true })
-        fetch("./../kasaData.json")
+        fetch('./../kasaData.json')
             .then((response) =>
                 response.ok
                     ? response.json()
@@ -33,9 +33,10 @@ export default class LocationPage extends React.Component {
     }
 
     render() {
-      const { locations, isLoading } = this.state
-      const{match} = this.props
-      const {idLocation} = match.params
+        const { locations, isLoading } = this.state
+        const{ match } = this.props
+        const { idLocation } = match.params
+        
         if (isLoading) {
             return (
                 <h1>
