@@ -14,7 +14,7 @@ export default class AboutCard extends React.Component {
     }
 
     render() {
-        const{title,id,describe}=this.props
+        const { title, id, describe } = this.props
         return this.state.check ? (
             <div className="about-item">
                 <div className="about-item-title-container">
@@ -49,4 +49,3 @@ export default class AboutCard extends React.Component {
         )
 }
 }
-

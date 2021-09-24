@@ -33,4 +33,3 @@ Card.defaultProps = {
   cover: DefaultPicture,
   title : '',
 }
-
