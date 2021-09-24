@@ -1,10 +1,9 @@
 import '../../styles/App.css'
 import FicheLocation from '../../components/FicheLocation'
-import { withRouter } from 'react-router';
 import React from 'react';
 import PropTypes from "prop-types"
 
-class Location extends React.Component {
+export default class LocationPage extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -36,7 +35,7 @@ class Location extends React.Component {
     render() {
       const { locations, isLoading } = this.state
       const{match} = this.props
-      const idLocation = match.params.idLocation
+      const {idLocation} = match.params
         if (isLoading) {
             return (
                 <h1>
@@ -80,6 +79,3 @@ class Location extends React.Component {
         }
     }
 }
-
-const LocationPage = withRouter(Location)
-export default LocationPage

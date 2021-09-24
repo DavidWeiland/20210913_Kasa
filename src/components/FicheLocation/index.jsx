@@ -1,10 +1,10 @@
 import '../../styles/FicheLocation.css'
-import AboutCard from '../AboutCard/AboutCard'
+import AboutCard from '../AboutCard'
 import React from 'react'
-import CareScale from '../CareScale'
+import ScoreScale from '../ScoreScale'
 import chevron from "../../assets/images/chevron-down.svg"
 
-class FicheLocation extends React.Component {
+export default class FicheLocation extends React.Component {
     constructor(props) {
         super(props)
         this.state = { index: 1 }
@@ -25,18 +25,19 @@ class FicheLocation extends React.Component {
     }
 
     render() {
+        const { pictures, title, tags, host, rating, id, description, equipments, location } = this.props
         return (
             <div className="body">
                 <div className="fiche-location-carousel-container">
                     <img
                         className="fiche-location-carousel"
-                        src={this.props.pictures[this.state.index-1]}
+                        src={pictures[this.state.index-1]}
                         alt=""
                     />
                     <div className="picture-number">
                         <p>
                             {`${this.state.index}`} /
-                            {this.props.pictures.length}
+                            {pictures.length}
                         </p>
                     </div>
                     <div className="next" onClick={this.next}>
@@ -58,14 +59,14 @@ class FicheLocation extends React.Component {
                 <div className="fiche-location-header">
                     <div className="fiche-location-header-left">
                         <h1 className="fiche-location-title">
-                            {this.props.title}
+                            {title}
                         </h1>
                         <h2 className="fiche-location-subtitle">
-                            {this.props.location}
+                            {location}
                         </h2>
                         <div className="fiche-location-tag-rating-container">
                             <div className="fiche-location-tag-container">
-                                {this.props.tags.map((tag, index) => (
+                                {tags.map((tag, index) => (
                                     <span key={`tag-${index}`}>{tag}</span>
                                 ))}
                             </div>
@@ -75,50 +76,36 @@ class FicheLocation extends React.Component {
                         <div className="fiche-location-host">
                             <div className="fiche-location-host-name">
                                 <span>
-                                    {this.props.host.name.split(" ")[0]}
+                                    {host.name.split(" ")[0]}
                                 </span>
                                 <span>
-                                    {this.props.host.name.split(" ")[1]}
+                                    {host.name.split(" ")[1]}
                                 </span>
                             </div>
                             <img
-                                src={`${this.props.host.picture}`}
-                                alt={`${this.props.host.picture}`}
+                                src={`${host.picture}`}
+                                alt={`${host.picture}`}
                                 className="fiche-location-host-picture"
                             />
                         </div>
                         <div className="fiche-location-rating-container">
-                            <CareScale scaleValue={this.props.rating} />
+                            <ScoreScale scoreValue={rating} />
                         </div>
                     </div>
                 </div>
                 <div className="fiche-location-about">
                     <AboutCard
-                        key={`description-${this.props.id}`}
+                        key={`description-${id}`}
                         title="Description"
-                        describe={this.props.description}
+                        describe={description}
                     />
                     <AboutCard
-                        key={`equipements-${this.props.id}`}
+                        key={`equipements-${id}`}
                         title="Equipements"
-                        describe={this.props.equipments}
+                        describe={equipments}
                     />
                 </div>
             </div>
         )
     }
 }
-
-export default FicheLocation
-
-/*
-travail sur carousel à monter en ligne 13
-<div className="fiche-location-carousel">
-              {this.props.pictures.map((picture, index) => (
-                <Carousel
-                key={`${picture}-${index}`}
-                picture={picture}
-                id={this.props.id}
-                />
-                ))}
-          </div>*/

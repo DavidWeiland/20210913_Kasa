@@ -2,7 +2,7 @@ import '../../styles/Error.css'
 import {Link} from 'react-router-dom'
 import React from 'react'
 
-class Error extends React.Component {
+export default class Error extends React.Component {
   render() {
     
     return (
@@ -15,5 +15,3 @@ class Error extends React.Component {
   )
 }
 }
-
-export default Error

@@ -1,52 +1,51 @@
 import "../../styles/AboutCard.css"
 import chevron from '../../assets/images/chevron-down.svg'
-import ACDescribe from './ACDescribe'
+import AboutDescribe from '../AboutDescribe'
 import React from "react"
 
-class AboutCard extends React.Component {
+export default class AboutCard extends React.Component {
     constructor(props){
         super(props)
         this.state = { check: true }
-        this.toggle = this.toggle.bind(this)
+        this.divOpeningToggle = this.divOpeningToggle.bind(this)
     }
-    toggle(){
+    divOpeningToggle(){
         this.setState(({ check })=>({check:!check}))
     }
 
     render() {
+        const { title, id, describe } = this.props
         return this.state.check ? (
             <div className="about-item">
                 <div className="about-item-title-container">
-                    <span className="about-item-title">{this.props.title}</span>
+                    <span className="about-item-title">{title}</span>
                     <img
                         src={chevron}
                         alt=""
                         className="about-item-icon open"
-                        onClick={this.toggle}
+                        onClick={this.divOpeningToggle}
                     />
                 </div>
                 <div className="about-item-describe-container">
-                    <ACDescribe
-                        key={`${this.props.title}-${this.props.id}`}
-                        title={this.props.title}
-                        describe={this.props.describe}
+                    <AboutDescribe
+                        key={`${title}-${id}`}
+                        title={title}
+                        describe={describe}
                     />
                 </div>
             </div>
         ) : (
             <div className="about-item">
                 <div className="about-item-title-container">
-                    <span className="about-item-title">{this.props.title}</span>
+                    <span className="about-item-title">{title}</span>
                     <img
                         src={chevron}
                         alt=""
                         className="about-item-icon"
-                        onClick={this.toggle}
+                        onClick={this.divOpeningToggle}
                     />
                 </div>
             </div>
         )
 }
 }
-
-export default AboutCard

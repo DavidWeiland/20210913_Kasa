@@ -3,7 +3,7 @@ import background from '../../assets/images/section_1_BG.jpg'
 import Card from '../../components/Card'
 import React from 'react'
 
-class App extends React.Component {
+export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { locations: [], isLoading: false }
@@ -55,5 +55,3 @@ class App extends React.Component {
     }
   }
 }
-
-export default App

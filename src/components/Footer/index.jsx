@@ -3,7 +3,7 @@ import "../../styles/Footer.css";
 import { Link } from 'react-router-dom'
 import React from "react";
 
-class Footer extends React.Component {
+export default class Footer extends React.Component {
   render() {
     return (
       <div className='footer'>
@@ -16,5 +16,3 @@ class Footer extends React.Component {
     )
   }
 }
-
-export default Footer

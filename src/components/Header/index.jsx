@@ -3,7 +3,7 @@ import '../../styles/Header.css'
 import {Link} from 'react-router-dom'
 import React from 'react'
 
-class Header extends React.Component {
+export default class Header extends React.Component {
     render(){
         return (
             <div className="banner">
@@ -22,5 +22,3 @@ class Header extends React.Component {
         )
     }
 }
-
-export default Header

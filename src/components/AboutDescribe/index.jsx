@@ -1,22 +1,24 @@
 import "../../styles/AboutCard.css"
 import React from "react"
 
-class ACDescribe extends React.Component {
-
+export default class AboutDescribe extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {}
+    }
     render() {
-        return this.props.title === "Equipements" ? (
+        const { title, describe } = this.props
+        return title === "Equipements" ? (
           <div className="about-item-describe">
-              {this.props.describe.map((desc, index) => (
+              {describe.map((desc, index) => (
                   <span key={`${desc}-${index}`}>{desc}</span>
               ))}
           </div>
         ) : (
           <span className="about-item-describe">
-              {this.props.describe}
+              {describe}
           </span>
         )
     }
 }
 
-
-export default ACDescribe
