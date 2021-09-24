@@ -1,5 +1,6 @@
 import '../../styles/App.css'
 import FicheLocation from '../../components/FicheLocation'
+import Error from '../Error';
 import React from 'react';
 import PropTypes from "prop-types"
 
@@ -36,8 +37,11 @@ export default class LocationPage extends React.Component {
         const { locations, isLoading } = this.state
         const{ match } = this.props
         const { idLocation } = match.params
+        const location = locations.filter((location) => location.id === idLocation)
         
-        if (isLoading) {
+        if (location.length<1) {
+            return <Error />
+        } else if (isLoading) {
             return (
                 <h1>
                     loading data : {idLocation} en cours...
@@ -46,9 +50,7 @@ export default class LocationPage extends React.Component {
         } else {
             return (
                 <div className="body">
-                    {locations
-                        .filter((location) => location.id === idLocation)
-                        .map(
+                    {location.map(
                             ({
                                 index,
                                 id,
