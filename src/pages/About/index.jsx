@@ -1,9 +1,9 @@
 import "../../styles/App.css"
 import background from "../../assets/images/gustavo-alves.png"
-import AboutCard from "../../components/AboutCard/AboutCard"
+import AboutCard from "../../components/AboutCard"
 import React from "react"
 
-class About extends React.Component {
+export default class About extends React.Component {
     constructor(props) {
         super(props);
         this.state = { aboutText: [], isLoading: false }
@@ -51,4 +51,3 @@ class About extends React.Component {
     }
 }
 
-export default About
