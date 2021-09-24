@@ -43,8 +43,8 @@
   z-index:2;
   box-sizing: border-box;
   background-color: transparent;
-  height: 415px;
-  width: 50px;
+  height: 100%;
+  width: 5%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -218,10 +218,7 @@ height: 30px;
       font-size: 12px;
     }
 
-    .prev, .next{
-      height: 255px;
-      width: 30px;
-    }
+    
 
     .fiche-location-header{
       height: auto;
