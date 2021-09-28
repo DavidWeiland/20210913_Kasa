@@ -1,5 +1,9 @@
-Routes in src/index.jsx
-Pages ans Components in folders ./src/Pages/ and ./src/components/
+
+===== Routes in src/index.jsx =====
+-
+===== Pages and Components in folders ./src/Pages/ and ./src/components/ =====
+-
+
 
 
 
