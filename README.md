@@ -1,6 +1,8 @@
 Routes in src/index.jsx
 Pages ans Components in folders ./src/Pages/ and ./src/components/
 
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
