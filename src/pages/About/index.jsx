@@ -19,34 +19,29 @@ export default class About extends React.Component {
 
     render() {
         const { aboutText, isLoading } = this.state
-        if (isLoading) {
-            return (
-                
+        
+        return (isLoading) ? (
                 <h1>loading data en cours...</h1>
-                
-            )
-        } else {
-            return (
-                <div className="body">
-                    <section className="section-2">
-                        <img
-                            src={background}
-                            alt="background"
-                            className="section-2-BG"
+        ) : (
+            <div className="body">
+                <section className="section-2">
+                    <img
+                        src={background}
+                        alt="background"
+                        className="section-2-BG"
+                    />
+                    <div className="section-2-title-container"></div>
+                </section>
+                <section className="gallery-2">
+                    {aboutText.map(({ index, title, describe }) => (
+                        <AboutCard
+                            key={`${title}-${index}`}
+                            title={title}
+                            describe={describe}
                         />
-                        <div className="section-2-title-container"></div>
-                    </section>
-                    <section className="gallery-2">
-                        {aboutText.map(({ index, title, describe }) => (
-                            <AboutCard
-                                key={`${title}-${index}`}
-                                title={title}
-                                describe={describe}
-                            />
-                        ))}
-                    </section>
-                </div>
-            )
-        }
+                    ))}
+                </section>
+            </div>
+        )
     }
 }

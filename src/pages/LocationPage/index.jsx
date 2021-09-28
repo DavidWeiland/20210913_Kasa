@@ -2,7 +2,6 @@ import '../../styles/App.css'
 import FicheLocation from '../../components/FicheLocation'
 import Error from '../Error';
 import React from 'react';
-import PropTypes from "prop-types"
 
 export default class LocationPage extends React.Component {
     constructor(props) {
@@ -11,9 +10,6 @@ export default class LocationPage extends React.Component {
             locations: [],
             isLoading: false,
         }
-    }
-    static propTypes = {
-        match: PropTypes.object.isRequired,
     }
 
     componentDidMount() {
@@ -39,16 +35,14 @@ export default class LocationPage extends React.Component {
         const { idLocation } = match.params
         const location = locations.filter((location) => location.id === idLocation)
         
-        if (location.length<1) {
-            return <Error />
-        } else if (isLoading) {
-            return (
+        return (location.length<1)  ? (
+            <Error />
+        ) : (
+            (isLoading) ? (
                 <h1>
-                    loading data : {idLocation} en cours...
+                loading data : {idLocation} en cours...
                 </h1>
-            )
-        } else {
-            return (
+            ) : (
                 <div className="body">
                     {location.map(
                             ({
@@ -79,6 +73,7 @@ export default class LocationPage extends React.Component {
                         )}
                 </div>
             )
-        }
+        )
+    
     }
 }

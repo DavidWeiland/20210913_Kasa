@@ -9,8 +9,10 @@ export default class Card extends React.Component {
         super(props)
         this.state = {}
     }
-  render() {
-      const { id, cover, title } = this.props
+  
+    render() {
+        const { id, cover, title } = this.props
+      
         return (
             <Link to={`/location/${id}`} className="location-item">
                 <img
@@ -25,11 +27,11 @@ export default class Card extends React.Component {
 }
 
 Card.propTypes = {
-  cover: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+    cover: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
 }
 
 Card.defaultProps = {
-  cover: DefaultPicture,
-  title : '',
+    cover: DefaultPicture,
+    title : '',
 }

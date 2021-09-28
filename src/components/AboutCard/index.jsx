@@ -6,16 +6,18 @@ import React from "react"
 export default class AboutCard extends React.Component {
     constructor(props){
         super(props)
-        this.state = { check: true }
+        this.state = { open: true }
         this.divOpeningToggle = this.divOpeningToggle.bind(this)
     }
+
     divOpeningToggle(){
-        this.setState(({ check })=>({check:!check}))
+        this.setState(({ open })=>({open:!open}))
     }
 
     render() {
-        const { title, id, describe } = this.props
-        return this.state.check ? (
+        const { title, id, describe } = this.props
+        
+        return this.state.open ? (
             <div className="about-item">
                 <div className="about-item-title-container">
                     <span className="about-item-title">{title}</span>
@@ -47,5 +49,5 @@ export default class AboutCard extends React.Component {
                 </div>
             </div>
         )
-}
+    }
 }

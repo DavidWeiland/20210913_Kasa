@@ -41,18 +41,18 @@
 }
 
 @media screen and (max-width:376px) {
-    .banner{
-      height: 50px;
-      margin: 0 auto;
-      width: 92%;
-    }
+  .banner{
+    height: 50px;
+    margin: 0 auto;
+    width: 92%;
+  }
 
-    .banner-logo{
-      height: 50px;
-    }
+  .banner-logo{
+    height: 50px;
+  }
 
-    .banner-nav-elem{
-      font-size: 12px;
-      margin-left: 15px;
-    }
+  .banner-nav-elem{
+    font-size: 12px;
+    margin-left: 15px;
+  }
 }

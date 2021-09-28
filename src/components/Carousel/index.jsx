@@ -1,46 +1,57 @@
-import "../../styles/Carousel.css"
-import React from 'react'
-import chevron from '../../assets/images/chevron-down.svg'
+import "../../styles/FicheLocation.css"
+import React from "react"
+import chevron from "../../assets/images/chevron-down.svg"
 
 export default class Carousel extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {}
+        this.state = { index: 1 }
+        this.next = this.next.bind(this)
+        this.prev = this.prev.bind(this)
     }
+
+    next() {
+        this.state.index === this.props.pictures.length
+            ? this.setState(() => ({ index: 1 }))
+            : this.setState((state) => ({ index: state.index + 1 }))
+    }
+
+    prev() {
+        this.state.index === 1
+            ? this.setState(() => ({ index: this.props.pictures.length }))
+            : this.setState((state) => ({ index: state.index - 1 }))
+    }
+
     render() {
-        const {index,length, picture} = this.props
-        let next, prev
-        if (index === 1) {
-            next = `#slide-${index + 1}`
-            prev = `#slide-${length}`
-        } else if (index === length) {
-            next = `#slide-1`
-            prev = `#slide-${index - 1}`
-        } else {
-            next = `#slide-${index + 1}`
-            prev = `#slide-${index - 1}`
-        }
+        const { pictures } = this.props
 
         return (
-            <div id={`slide-${index}`}>
+            <div className="fiche-location-carousel-container">
                 <img
-                    className="carousel-image"
-                    src={`${picture}`}
+                    className="fiche-location-carousel"
+                    src={pictures[this.state.index - 1]}
                     alt=""
                 />
-                <a className="prev" href={prev}>
-                    <img className="prev-icon" src={chevron} alt="prev-icon" />
-                </a>
-                <a className="next" href={next}>
-                    <img className="next-icon" src={chevron} alt="next-icon" />
-                </a>
                 <div className="picture-number">
                     <p>
-                        {index}/{length}
+                        {`${this.state.index}`} /{pictures.length}
                     </p>
+                </div>
+                <div className="next" onClick={this.next}>
+                    <img
+                        className="next-icon"
+                        src={chevron}
+                        alt="next-icon"
+                    />
+                </div>
+                <div className="prev" onClick={this.prev}>
+                    <img
+                        className="prev-icon"
+                        src={chevron}
+                        alt="prev-icon"
+                    />
                 </div>
             </div>
         )
     }
 }
-

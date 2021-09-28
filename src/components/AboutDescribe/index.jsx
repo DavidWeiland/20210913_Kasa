@@ -6,18 +6,20 @@ export default class AboutDescribe extends React.Component {
         super(props);
         this.state = {}
     }
+    
     render() {
         const { title, describe } = this.props
+
         return title === "Equipements" ? (
-          <div className="about-item-describe">
-              {describe.map((desc, index) => (
-                  <span key={`${desc}-${index}`}>{desc}</span>
-              ))}
-          </div>
+            <div className="about-item-describe">
+                {describe.map((desc, index) => (
+                    <span key={`${desc}-${index}`}>{desc}</span>
+                ))}
+            </div>
         ) : (
-          <span className="about-item-describe">
-              {describe}
-          </span>
+            <span className="about-item-describe">
+                {describe}
+            </span>
         )
     }
 }

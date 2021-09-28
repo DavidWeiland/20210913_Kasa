@@ -31,6 +31,7 @@
   height: 24px;
   margin-right: 20px;
 }
+
 .open{
   transform: rotate(180deg)
 }
@@ -53,6 +54,7 @@
   margin: 15px;
   margin-top:20px;
 }
+
 @media screen and (max-width:376px) {
     .about-item{
       width: 100%;

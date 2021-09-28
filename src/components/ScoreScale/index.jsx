@@ -7,7 +7,8 @@ export default class ScoreScale extends React.Component{
     constructor(props) {
         super(props)
         this.state={}
-}
+    }
+    
     render() {
         const { scoreValue }= this.props
         const range = [1, 2, 3, 4, 5]

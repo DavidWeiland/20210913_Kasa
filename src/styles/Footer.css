@@ -24,6 +24,7 @@ margin-top: 66px;
   align-items: flex-end;
   margin: 29px;
 }
+
 @media screen and (max-width:376px) {
   .footer{
     font-size: 12px;

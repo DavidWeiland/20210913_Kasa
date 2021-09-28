@@ -21,11 +21,13 @@
   object-fit: cover;
   margin:1%;
 }
+
 .location-item-title{
   height: 20%;
   max-width: 70%;
   margin-left: 2%;
 }
+
 @media screen and (max-width:376px) {
   .location-item{
     width: 100%;
