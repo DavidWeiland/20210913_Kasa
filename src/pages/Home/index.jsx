@@ -12,7 +12,7 @@ export default class App extends React.Component {
     componentDidMount() {
         this.setState({ isLoading: true })
         fetch("./kasaData.json")
-            .then((response) => response.ok ? response.json() : console.error('code: ', response.status))
+            .then((response) => response.json())
             .then((data) => this.setState({ locations: data.locationsList, isLoading: false }))
             .catch ((error)=>console.log(error))
     }
