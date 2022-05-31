@@ -12,8 +12,17 @@ export default class About extends React.Component {
     componentDidMount() {
         this.setState({ isLoading: true })
         fetch("./kasaData.json")
-            .then((response) => response.ok ? response.json() : console.error('code: ', response.status))
-            .then((data) => this.setState({ aboutText: data.aboutText, isLoading: false }))
+            .then((response) =>
+                response.ok ?
+                    response.json()
+                    : console.error('code: ', response.status)
+            )
+            .then((data) =>
+                this.setState({
+                    aboutText: data.aboutText,
+                    isLoading: false
+                })
+            )
             .catch((error) => console.log(error))
     }
 

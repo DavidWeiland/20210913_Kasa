@@ -16,8 +16,8 @@ export default class LocationPage extends React.Component {
         this.setState({ isLoading: true })
         fetch('./../kasaData.json')
             .then((response) =>
-                response.ok
-                    ? response.json()
+                response.ok ?
+                    response.json()
                     : console.error("code: ", response.status)
             )
             .then((data) =>
