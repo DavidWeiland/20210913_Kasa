@@ -4,6 +4,8 @@ import { act } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom"
 import Home from './index'
 
+import { mockData } from "./../../Utils/mockData"
+
 let container = null
 beforeEach(() => {
   container = document.createElement("div")
@@ -17,22 +19,20 @@ afterEach(() => {
 })
 
 test("Fetching data", async () => {
-  const fakeData = {locationsList:[{
-      title: "FirstTitle",
-      cover: "url",
-      id: 123
-  }]}
-  jest.spyOn(global, 'fetch').mockImplementation(() =>
-    Promise.resolve({
-      ok:true,
-      json:()=> Promise.resolve(fakeData)
+    jest.spyOn(global, "fetch").mockImplementation(() =>
+        Promise.resolve({
+            ok: true,
+            json: () => Promise.resolve(mockData),
+        })
+    )
+    await act(async () => {
+        render(<BrowserRouter><Home /></BrowserRouter>, container)
     })
-  )
-  await act(async () => {
-    render(<BrowserRouter><Home /></BrowserRouter>, container)
-  })
-  expect(container.querySelector(".gallery").textContent).toBe(fakeData.locationsList[ 0 ].title)
-  global.fetch.mockRestore()
+  
+    expect(container.querySelector(".gallery").textContent).toBe(
+        mockData.locationsList[0].title
+    )
+    global.fetch.mockRestore()
 })
 
 test("Echec Fetching Data", async () => {

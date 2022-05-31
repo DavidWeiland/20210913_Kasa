@@ -3,6 +3,8 @@ import { render, unmountComponentAtNode } from 'react-dom'
 import { act } from "@testing-library/react"
 import About from './index'
 
+import { mockData } from "./../../Utils/mockData"
+
 let container = null
 beforeEach(() => {
   container = document.createElement("div")
@@ -16,15 +18,6 @@ afterEach(() => {
 })
 
 test("Fetching Data", async () => {
-  const mockData = {
-      aboutText: [
-          {
-              title: "Test Title About",
-              describe:
-                  "Test Describe About",
-          }
-      ]
-  }
   jest.spyOn(global, 'fetch').mockImplementation(() =>
     Promise.resolve({
       ok: true,
@@ -55,6 +48,6 @@ test("Echec Fetching Data", async () => {
         render(<About />, container)
     })
     expect(container.querySelector("h1").textContent).toBe("loading data en cours...")
-    expect(container.querySelector(".gallery-2")).toBe(null)
+    expect(container.querySelector(".gallery-2")).toBeFalsy()
     global.fetch.mockRestore()
 })
