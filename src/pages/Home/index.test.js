@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 import { render, unmountComponentAtNode } from 'react-dom'
 import { act } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom"
@@ -24,6 +24,7 @@ test("Fetching data", async () => {
   }]}
   jest.spyOn(global, 'fetch').mockImplementation(() =>
     Promise.resolve({
+    ok:true,
     json:()=> Promise.resolve(fakeData)
     })
   )
@@ -35,10 +36,10 @@ test("Fetching data", async () => {
 })
 
 test("No data", async () => {
-  const fakeData=null
     jest.spyOn(global, "fetch").mockImplementation(() =>
-        Promise.resolve({
-            json: () => Promise.resolve(fakeData),
+      Promise.resolve({
+        ok:false,
+        status:"403, Forbidden"
         })
     )
     await act(async () => {
