@@ -24,8 +24,8 @@ test("Fetching data", async () => {
   }]}
   jest.spyOn(global, 'fetch').mockImplementation(() =>
     Promise.resolve({
-    ok:true,
-    json:()=> Promise.resolve(fakeData)
+      ok:true,
+      json:()=> Promise.resolve(fakeData)
     })
   )
   await act(async () => {
@@ -35,7 +35,7 @@ test("Fetching data", async () => {
   global.fetch.mockRestore()
 })
 
-test("No data", async () => {
+test("Echec Fetching Data", async () => {
     jest.spyOn(global, "fetch").mockImplementation(() =>
       Promise.resolve({
         ok:false,
