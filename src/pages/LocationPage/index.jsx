@@ -35,44 +35,40 @@ export default class LocationPage extends React.Component {
         const { idLocation } = match.params
         const location = locations.filter((location) => location.id === idLocation)
         
-        return (location.length<1)  ? (
-            <Error />
+        return  (isLoading) ? (
+            <h1>loading data : {idLocation} en cours...</h1>
+        ) : (location.length !== 0) ? (
+            <div className="body">
+                {location.map(
+                    ({
+                        index,
+                        id,
+                        title,
+                        pictures,
+                        description,
+                        host,
+                        rating,
+                        location,
+                        equipments,
+                        tags,
+                    }) => (
+                        <FicheLocation
+                            key={`${id}-${index}`}
+                            id={id}
+                            title={title}
+                            pictures={pictures}
+                            description={description}
+                            host={host}
+                            rating={rating}
+                            location={location}
+                            equipments={equipments}
+                            tags={tags}
+                        />
+                    )
+                )}
+            </div>
         ) : (
-            (isLoading) ? (
-                <h1>
-                loading data : {idLocation} en cours...
-                </h1>
-            ) : (
-                <div className="body">
-                    {location.map(
-                            ({
-                                index,
-                                id,
-                                title,
-                                pictures,
-                                description,
-                                host,
-                                rating,
-                                location,
-                                equipments,
-                                tags,
-                            }) => (
-                                <FicheLocation
-                                    key={`${id}-${index}`}
-                                    id={id}
-                                    title={title}
-                                    pictures={pictures}
-                                    description={description}
-                                    host={host}
-                                    rating={rating}
-                                    location={location}
-                                    equipments={equipments}
-                                    tags={tags}
-                                />
-                            )
-                        )}
-                </div>
-            )
+            <Error />
         )
     
     }
